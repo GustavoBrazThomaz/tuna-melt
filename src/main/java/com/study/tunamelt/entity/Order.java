@@ -2,6 +2,8 @@ package com.study.tunamelt.entity;
 
 import com.study.tunamelt.enums.OrderStatus;
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.UuidGenerator;
 
 import java.math.BigDecimal;
@@ -9,6 +11,8 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
+@Data
+@NoArgsConstructor
 @Entity
 @Table(name = "orders")
 public class Order {
@@ -26,7 +30,7 @@ public class Order {
 
     private BigDecimal totalPrice;
 
-    private Boolean priority;
+    private boolean priority;
 
     @Column(nullable = false)
     private Integer tableNumber;

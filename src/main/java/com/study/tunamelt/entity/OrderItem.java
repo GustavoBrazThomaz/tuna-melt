@@ -1,10 +1,14 @@
 package com.study.tunamelt.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.UuidGenerator;
 
 import java.util.UUID;
 
+@Data
+@NoArgsConstructor
 @Entity
 @Table(name = "order_items")
 public class OrderItem {
@@ -18,8 +22,8 @@ public class OrderItem {
     private Order order;
 
     @ManyToOne
-    @JoinColumn(name = "plate_id")
-    private Plate plate;
+    @JoinColumn(name = "menu_item_id")
+    private MenuItem menuItem;
 
     private Integer quantity;
 }

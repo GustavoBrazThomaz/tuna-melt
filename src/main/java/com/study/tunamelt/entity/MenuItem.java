@@ -2,17 +2,21 @@ package com.study.tunamelt.entity;
 
 import com.study.tunamelt.enums.Category;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Positive;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.UuidGenerator;
 
 import java.math.BigDecimal;
 import java.util.UUID;
 
+@Data
+@NoArgsConstructor
 @Entity
-@Table(name = "plates")
-public class Plate {
+@Table(name = "menu_items")
+public class MenuItem {
     @Id
-    @GeneratedValue
-    @UuidGenerator
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     @Column(nullable = false)
@@ -22,13 +26,14 @@ public class Plate {
     private String description;
 
     @Column(nullable = false)
+    @Positive
     private BigDecimal price;
 
     @Column(nullable = false)
-    private Boolean available;
+    private boolean available;
 
     @Column(nullable = false)
-    private Boolean vegan;
+    private boolean vegan;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
