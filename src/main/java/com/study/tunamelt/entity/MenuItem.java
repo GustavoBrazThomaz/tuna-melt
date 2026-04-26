@@ -3,15 +3,18 @@ package com.study.tunamelt.entity;
 import com.study.tunamelt.enums.Category;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Positive;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.UuidGenerator;
 
 import java.math.BigDecimal;
 import java.util.UUID;
 
+@Builder
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "menu_items")
 public class MenuItem {
