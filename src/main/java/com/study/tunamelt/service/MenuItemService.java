@@ -6,7 +6,6 @@ import com.study.tunamelt.dto.menuItem.UpdateMenuItemDTO;
 import com.study.tunamelt.entity.MenuItem;
 import com.study.tunamelt.mapper.MenuItemMapper;
 import com.study.tunamelt.repository.MenuItemRepository;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;

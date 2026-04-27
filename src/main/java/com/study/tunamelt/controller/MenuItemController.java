@@ -31,7 +31,7 @@ public class MenuItemController {
     }
 
     @PutMapping
-    public ResponseMenuItemDTO update(@RequestBody UpdateMenuItemDTO menuItem){
+    public ResponseMenuItemDTO update(@RequestBody @Valid UpdateMenuItemDTO menuItem){
         return menuItemService.update(menuItem);
     }
 
